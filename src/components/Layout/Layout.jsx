@@ -1,7 +1,7 @@
 import React from "react";
 import style from "./Layout.module.css"
 
-const Layout = ({id = 1, title = "Title", descr = "desc", urlBg = null, colorBg = null}) => {
+const Layout = ({id = 1, title = "Title", urlBg = null, colorBg = null, children}) => {
     const styledSection = {
         backgroundImage: urlBg ? `url(${urlBg})` : 'none',
         backgroundColor: colorBg ? colorBg : 'none'
@@ -13,10 +13,10 @@ const Layout = ({id = 1, title = "Title", descr = "desc", urlBg = null, colorBg 
                 <article>
                     <div className={style.title}>
                         {title && <h3>{title}</h3>}
-                        <span className="sep arator"></span>
+                        <span className={style.separator}></span>
                     </div>
-                    <div className={style.desc + style.full}>
-                        {descr && <p>{descr}</p>}
+                    <div className={`${style.desc} ${style.full}`}>
+                        {children}
                     </div>
                 </article>
             </div>
