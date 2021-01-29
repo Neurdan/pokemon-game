@@ -5,7 +5,7 @@ import CardBackedPicture from '../../assets/card-back-side.jpg'
 
 export default ({name, img, id, type, values}) => {
 
-    let [isAtive, setIsActive] = useState(true)
+    let [isAtive, setIsActive] = useState(false)
 
     const handleClick = () => {
         setIsActive(!isAtive);
